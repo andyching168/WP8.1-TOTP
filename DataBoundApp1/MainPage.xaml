@@ -1,0 +1,63 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="DataBoundApp1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="CustomPanoramaTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <phone:Panorama HorizontalAlignment="Left" Margin="0,49,0,80" Width="480" VerticalAlignment="Top" Height="620">
+            <phone:Panorama.Title>
+                <TextBlock Text="OTP產生器" Style="{StaticResource CustomPanoramaTitleStyle}" FontSize="72" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,30,0,0"/>
+            </phone:Panorama.Title>
+            <phone:PanoramaItem CacheMode="{x:Null}" Header="主選單">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid HorizontalAlignment="Left">
+                    <ProgressBar x:Name="TimeProgressBar" Minimum="0" Maximum="30" Width="400" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="TotpTextBlock" Text="請新增金鑰" FontSize="36" Width="400" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Margin="0,20,0,0"/>
+                    <phone:LongListSelector x:Name="TOTP_List" IsGroupingEnabled="False" SelectionChanged="TOTP_List_SelectionChanged" x:FieldModifier="public" Width="400" HorizontalAlignment="Left" Margin="0,70,0,0">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="10,5">
+                                    <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="Bold"/>
+                                    <TextBlock Text="------------" />
+                                    <TextBlock Text="{Binding Otp}" FontSize="30" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                </Grid>
+            </phone:PanoramaItem>
+            <phone:PanoramaItem CacheMode="{x:Null}" Header="校正">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <StackPanel Margin="15,-32,15,0" Width="370" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock x:Name="NowTime" TextWrapping="Wrap" Margin="0,0,-40,7" HorizontalAlignment="Left" Text="Now Time"/>
+                    <TextBlock x:Name="SecondAdjLB" TextWrapping="Wrap" Text="秒數偏移" FontSize="24"/>
+                    <Slider x:Name="TimeDeviationAdj" Minimum="-30" Maximum="30" Height="84" HorizontalAlignment="Center" Width="350"/>
+                    <TextBlock x:Name="TimeDeviationValue" TextWrapping="Wrap" Text="0" Margin="0" HorizontalAlignment="Center" FontSize="24"/>
+                    <Button x:Name="OnlineCaliBT" Content="線上校正" Click="OnlineCaliBT_Click"/>
+                </StackPanel>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+    </Grid>
+</phone:PhoneApplicationPage>
