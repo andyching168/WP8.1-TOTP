@@ -113,7 +113,7 @@ namespace DataBoundApp1
         private DatagramSocket _socket; // 將 DatagramSocket 宣告為類別層級變數
         private ObservableCollection<TotpItem> _totpList = new ObservableCollection<TotpItem>();
         //在此處填上自建QRCode解碼Server，具體可查看https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general
-        private static string qrDecodeAPI_URL = "http://andyching168.synology.me:8000/decode_qr";
+        private static string qrDecodeAPI_URL = "";
 
 
         private void ShowLoading(string message)
