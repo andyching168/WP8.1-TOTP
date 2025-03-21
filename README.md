@@ -19,7 +19,7 @@
 
 這個應用程式支援通過掃描 QR Code 快速新增金鑰。但是，由於 Windows Phone 8.1 平台的限制，你需要自己架設一個 API 伺服器來處理 QR Code 解碼。
 1.  **架設Docker伺服器：**
-	*	請參見[https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general](https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general)架設
+	*	請參見[[https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general]([https://hub.docker.com/r/andyching168/fastapi-qr)](https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general](https://hub.docker.com/r/andyching168/fastapi-qr))架設
 
 2.  **修改應用程式程式碼：**
 
