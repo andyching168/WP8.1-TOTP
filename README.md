@@ -1,6 +1,6 @@
 # WP8.1-TOTP
 
-這是一個在 Windows Phone 8.1 上運行的 TOTP (Time-based One-Time Password) 密碼產生器應用程式。這個專案的目的是在舊平台上提供一個簡單易用的雙重驗證解決方案。
+這是一個在 Windows Phone 8.1 上運行的 TOTP (Time-based One-Time Password) 密碼產生器應用程式。在2025製作這個專案的目的？Because Why Not?
 
 ## 功能
 
@@ -19,7 +19,7 @@
 
 這個應用程式支援通過掃描 QR Code 快速新增金鑰。但是，由於 Windows Phone 8.1 平台的限制，你需要自己架設一個 API 伺服器來處理 QR Code 解碼。
 1.  **架設Docker伺服器：**
-	*	請參見[https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general](https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general)架設
+	*	請參見[https://hub.docker.com/r/andyching168/fastapi-qr](https://hub.docker.com/r/andyching168/fastapi-qr)架設
 
 2.  **修改應用程式程式碼：**
 
