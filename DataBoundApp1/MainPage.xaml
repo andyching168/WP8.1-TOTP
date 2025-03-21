@@ -52,9 +52,14 @@
                 </phone:PanoramaItem.RenderTransform>
                 <StackPanel Margin="15,-32,15,0" Width="370" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock x:Name="NowTime" TextWrapping="Wrap" Margin="0,0,-40,7" HorizontalAlignment="Left" Text="Now Time"/>
+                    <TextBlock x:Name="SysTime" TextWrapping="Wrap" Margin="0,0,0,7" HorizontalAlignment="Left" Text="System Time"/>
                     <TextBlock x:Name="SecondAdjLB" TextWrapping="Wrap" Text="秒數偏移" FontSize="24"/>
-                    <Slider x:Name="TimeDeviationAdj" Minimum="-30" Maximum="30" Height="84" HorizontalAlignment="Center" Width="350"/>
-                    <TextBlock x:Name="TimeDeviationValue" TextWrapping="Wrap" Text="0" Margin="0" HorizontalAlignment="Center" FontSize="24"/>
+                    <Slider x:Name="TimeDeviationAdj" Minimum="-60" Maximum="60" Height="84" HorizontalAlignment="Center" Width="350" SmallChange="1"/>
+                    <Grid Height="100">
+                        <Button x:Name="MinusBT" Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,200,0" Click="MinusBT_Click" Width="80" Height="80" FontSize="25"/>
+                        <TextBlock x:Name="TimeDeviationValue" TextWrapping="Wrap" Text="0" HorizontalAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
+                        <Button x:Name="plusBT" Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="200,0,0,0" Click="plusBT_Click" Width="80" Height="80" FontSize="25"/>
+                    </Grid>
                     <Button x:Name="OnlineCaliBT" Content="線上校正" Click="OnlineCaliBT_Click"/>
                 </StackPanel>
             </phone:PanoramaItem>

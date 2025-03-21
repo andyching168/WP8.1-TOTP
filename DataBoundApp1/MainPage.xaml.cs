@@ -113,7 +113,7 @@ namespace DataBoundApp1
         private DatagramSocket _socket; // 將 DatagramSocket 宣告為類別層級變數
         private ObservableCollection<TotpItem> _totpList = new ObservableCollection<TotpItem>();
         //在此處填上自建QRCode解碼Server，具體可查看https://hub.docker.com/repository/docker/andyching168/fastapi-qr/general
-        private static string qrDecodeAPI_URL = "http://andyching168.synology.me:8000/decode_qr";
+        private static string qrDecodeAPI_URL = "";
 
 
         private void ShowLoading(string message)
@@ -770,8 +770,8 @@ namespace DataBoundApp1
             var secondsInCurrentStep = currentUnixTime % 30;
             _remainingSeconds = 30 - Convert.ToInt32(secondsInCurrentStep) ;
 
-            NowTime.Text = string.Format("現在時間: {0}", DateTime.Now.AddSeconds(_timeDeviation).ToString("HH:mm:ss"));
-
+            NowTime.Text = string.Format("校正時間: {0}", DateTime.Now.AddSeconds(_timeDeviation).ToString("HH:mm:ss"));
+            SysTime.Text = string.Format("系統時間: {0}", DateTime.Now.ToString("HH:mm:ss"));
             // 更新進度條
             TimeProgressBar.Value = _remainingSeconds;
             TotpTextBlock.Text = string.Format("還剩: {0}秒", _remainingSeconds);
@@ -818,6 +818,30 @@ namespace DataBoundApp1
         private void OnlineCaliBT_Click(object sender, RoutedEventArgs e)
         {
             FetchNetworkTime();
+        }
+
+        private void plusBT_Click(object sender, RoutedEventArgs e)
+        {
+            // 更新偏差值顯示
+            _timeDeviation=_timeDeviation+1;
+            TimeDeviationAdj.Value = _timeDeviation;
+            TimeDeviationValue.Text = _timeDeviation.ToString();
+
+            // 將偏差值保存到儲存中
+            IsolatedStorageSettings.ApplicationSettings["TimeDeviation"] = _timeDeviation;
+            IsolatedStorageSettings.ApplicationSettings.Save();
+        }
+
+        private void MinusBT_Click(object sender, RoutedEventArgs e)
+        {
+            // 更新偏差值顯示
+            _timeDeviation = _timeDeviation-1;
+            TimeDeviationAdj.Value = _timeDeviation;
+            TimeDeviationValue.Text = _timeDeviation.ToString();
+
+            // 將偏差值保存到儲存中
+            IsolatedStorageSettings.ApplicationSettings["TimeDeviation"] = _timeDeviation;
+            IsolatedStorageSettings.ApplicationSettings.Save();
         }
     }
 }

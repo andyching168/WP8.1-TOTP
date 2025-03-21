@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
-  <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{21caa404-59e0-4462-91f5-07a8084a0dd7}" Title="OTP Authenticator" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="DataBoundApp1 author" Description="" SDOptOut="false" BackUpOptOut="false" Publisher="DataBoundApp1" PublisherID="{62f1d1fb-8dcd-499a-81ae-16a96be8f0c0}">
+  <DefaultLanguage xmlns="" code="zh-TW" />
+  <Languages xmlns="">
+    <Language code="zh-TW" />
+  </Languages>
+  <App xmlns="" ProductID="{21caa404-59e0-4462-91f5-07a8084a0dd7}" Title="OTP Authenticator" RuntimeType="Silverlight" Version="1.0.1" Genre="apps.normal" Author="andyching168" Description="" SDOptOut="false" BackUpOptOut="false" Publisher="andyching168" PublisherID="{62f1d1fb-8dcd-499a-81ae-16a96be8f0c0}">
     <IconPath IsRelative="true" IsResource="false">OTP_Logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
