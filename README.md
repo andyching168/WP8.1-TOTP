@@ -36,6 +36,10 @@
 *   你需要自行負責 API 伺服器的安全性和可靠性。
 *   這個專案只提供了一個基本的 QR Code 解碼功能，你可以根據自己的需求進行修改和擴展。
 
+## 截圖
+![image](https://github.com/andyching168/WP8.1-TOTP/blob/main/wp_ss_20250322_0001_1.jpg)
+![image](https://github.com/andyching168/WP8.1-TOTP/blob/main/wp_ss_20250322_0002.jpg)
+
 ## 開源協議
 
 這個專案使用 MIT License 授權條款。
