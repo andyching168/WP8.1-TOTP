@@ -1,6 +1,6 @@
 # WP8.1-TOTP
 
-這是一個在 Windows Phone 8.1 上運行的 TOTP (Time-based One-Time Password) 密碼產生器應用程式。這個專案的目的是在舊平台上提供一個簡單易用的雙重驗證解決方案。
+這是一個在 Windows Phone 8.1 上運行的 TOTP (Time-based One-Time Password) 密碼產生器應用程式。在2025製作這個專案的目的？Because Why Not?
 
 ## 功能
 
